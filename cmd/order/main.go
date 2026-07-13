@@ -11,11 +11,13 @@ type Config struct {
 	Log *log.Options `json:"log" mapstructure:"log"`
 }
 
+// 注册命令行参数至cobra，例如使得命令行支持：--log.level debug
 func (c *Config) Flags() (fss flag.NamedFlagSets) {
 	c.Log.AddFlags(fss.FlagSet("log"))
 	return fss
 }
 
+// 检查命令行参数是否合法
 func (c *Config) Validate() []error {
 	var errors []error
 	errors = append(errors, c.Log.Validate()...)
@@ -26,7 +28,8 @@ func main() {
 	cfg := &Config{
 		Log: log.NewOptions(),
 	}
-	appl := app.NewApp("order", "mxshop", app.WithOptions(cfg), app.WithRunFunc(run))
+	// name 可以理解成服务名，basename 可以理解成cobra命令名
+	appl := app.NewApp("order", "mxshop-order", app.WithOptions(cfg), app.WithRunFunc(run))
 	appl.Run()
 }
 
