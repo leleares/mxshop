@@ -29,11 +29,14 @@ func main() {
 		Log: log.NewOptions(),
 	}
 	// name 可以理解成服务名，basename 可以理解成cobra命令名
-	appl := app.NewApp("order", "mxshop-order", app.WithOptions(cfg), app.WithRunFunc(run))
+	appl := app.NewApp("order", "mxshop-order", app.WithOptions(cfg), app.WithRunFunc(run(cfg)))
 	appl.Run()
 }
 
-func run(basename string) error {
-	fmt.Printf("basename:%s start \n", basename)
-	return nil
+func run(config *Config) app.RunFunc {
+	return func(basename string) error {
+		fmt.Printf("basename:%s start \n", basename)
+		fmt.Printf("error level is %s", config.Log.Level)
+		return nil
+	}
 }
