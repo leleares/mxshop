@@ -2,7 +2,7 @@ package user
 
 import (
 	"fmt"
-	"mxshop/app/user/config"
+	"mxshop/app/user/srv/config"
 	"mxshop/pkg/app"
 )
 

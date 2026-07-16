@@ -2,7 +2,7 @@ package main
 
 import (
 	"math/rand"
-	"mxshop/app/user"
+	user "mxshop/app/user/srv"
 	"os"
 	"runtime"
 	"time"
