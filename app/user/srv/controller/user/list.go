@@ -2,26 +2,36 @@ package user
 
 import (
 	"context"
-	"fmt"
 	upbv1 "mxshop/api/user/v1"
-	srvv1 "mxshop/app/user/srv/service/v1"
 	v1 "mxshop/pkg/common/meta/v1"
 )
 
-func GetUserList(ctx context.Context, req *upbv1.PageInfo) (*upbv1.UserListResponse, error) {
-	resp, err := srvv1.List(context.Background(), &v1.ListMeta{
+func (us *userServer) GetUserList(ctx context.Context, req *upbv1.PageInfo) (*upbv1.UserListResponse, error) {
+	resp, err := us.srv.List(ctx, &v1.ListMeta{
 		Page:     int(req.Pn),
 		PageSize: int(req.PSize),
 	})
 	if err != nil {
-		fmt.Errorf("%s", err.Error())
+		return nil, err
 	}
-	var userListResp *upbv1.UserListResponse
-	userListResp.Total = int32(resp.TotalCount)
+	userListResp := &upbv1.UserListResponse{
+		Total: int32(resp.TotalCount),
+	}
 
 	for _, v := range resp.UserList {
+		var birthDay uint64
+		if v.Birthday != nil && !v.Birthday.IsZero() {
+			birthDay = uint64(v.Birthday.Unix())
+		}
+
 		userListResp.Data = append(userListResp.Data, &upbv1.UserInfoResponse{
-			PassWord: v.Name,
+			Id:       v.ID,
+			PassWord: v.Password,
+			Mobile:   v.Mobile,
+			NickName: v.NickName,
+			BirthDay: birthDay,
+			Gender:   v.Gender,
+			Role:     v.Role,
 		})
 	}
 
