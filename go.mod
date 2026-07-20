@@ -3,11 +3,7 @@ module mxshop
 go 1.19
 
 require (
-	github.com/alibaba/sentinel-golang v1.0.2
-	github.com/alibaba/sentinel-golang/pkg/adapters/grpc v0.0.0-20221011112204-0d804bbadda5
-	github.com/alibaba/sentinel-golang/pkg/datasource/nacos v0.0.0-20221011112204-0d804bbadda5
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.1836
-	github.com/anaskhan96/go-password-encoder v0.0.0-20201010210601-c765b799fd72
 	github.com/appleboy/gin-jwt/v2 v2.8.0
 	github.com/asaskevich/govalidator v0.0.0-20210307081110-f21760c49a8d
 	github.com/bitly/go-simplejson v0.5.0
@@ -26,14 +22,12 @@ require (
 	github.com/go-redis/redis/v9 v9.0.0-rc.1
 	github.com/go-redsync/redsync/v4 v4.6.0
 	github.com/google/uuid v1.3.0
-	github.com/google/wire v0.5.0
 	github.com/gosuri/uitable v0.0.4
 	github.com/h2non/filetype v1.1.3
 	github.com/hashicorp/consul/api v1.12.0
 	github.com/json-iterator/go v1.1.12
 	github.com/moby/term v0.0.0-20220808134915-39b0c02b01ae
 	github.com/mojocn/base64Captcha v1.3.5
-	github.com/nacos-group/nacos-sdk-go v1.0.8
 	github.com/novalagung/gubrak v1.0.0
 	github.com/olivere/elastic/v7 v7.0.32
 	github.com/penglongli/gin-metrics v0.1.10
@@ -80,10 +74,8 @@ require (
 	github.com/dtm-labs/logger v0.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.5.4 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
-	github.com/go-errors/errors v1.0.1 // indirect
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-playground/form/v4 v4.2.0 // indirect
 	github.com/go-redis/redis/extra/rediscmd/v9 v9.0.0-rc.1 // indirect
 	github.com/go-resty/resty/v2 v2.7.0 // indirect
@@ -110,8 +102,6 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
-	github.com/lestrrat/go-file-rotatelogs v0.0.0-20180223000712-d3151e2a480f // indirect
-	github.com/lestrrat/go-strftime v0.0.0-20180220042222-ba3bf9c1d042 // indirect
 	github.com/magiconair/properties v1.8.6 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
@@ -132,21 +122,15 @@ require (
 	github.com/prometheus/common v0.37.0 // indirect
 	github.com/prometheus/procfs v0.8.0 // indirect
 	github.com/rivo/uniseg v0.2.0 // indirect
-	github.com/shirou/gopsutil v3.21.11+incompatible // indirect
 	github.com/spf13/afero v1.8.2 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
-	github.com/stretchr/objx v0.4.0 // indirect
 	github.com/subosito/gotenv v1.3.0 // indirect
-	github.com/tklauser/go-sysconf v0.3.10 // indirect
-	github.com/tklauser/numcpus v0.4.0 // indirect
-	github.com/toolkits/concurrent v0.0.0-20150624120057-a4371d70e3e3 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.1.1 // indirect
 	github.com/xdg-go/stringprep v1.0.3 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20181117223130-1be2e3e5546d // indirect
-	github.com/yusufpapurcu/wmi v1.2.2 // indirect
 	go.mongodb.org/mongo-driver v1.10.3 // indirect
 	go.opentelemetry.io/otel/metric v0.32.1 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
